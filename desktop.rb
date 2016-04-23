@@ -3,6 +3,10 @@ dep 'i3.managed' do
   provides 'i3', 'i3status', 'i3lock', 'j4-dmenu-desktop'
 end
 
+dep 'fonts-hack-ttf.managed' do
+  met? { '/usr/share/fonts/truetype/hack'.p.exists? }
+end
+
 dep 'gvfs-bin.managed' do
   provides 'gvfs-open'
 end
@@ -35,4 +39,5 @@ dep 'desktop' do
   requires 'gnome-settings-daemon.bin'
   requires 'dunst.bin'
   requires 'slack.bin'
+  requires 'fonts-hack-ttf.managed'
 end
